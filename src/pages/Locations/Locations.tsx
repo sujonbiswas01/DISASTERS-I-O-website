@@ -1,7 +1,35 @@
+import LocationCard from "../../assets/svg/LocationCard1";
+import LocationCard2 from "../../assets/svg/LocationCard2";
+import Location from "../../assets/svg/LocationImg";
 import TreeIcon from "../../assets/svg/TreeIcon";
 import { Button } from "../../components/button/Button";
 import { CardContainer } from "../../components/container/CardContainer";
-
+const LocationCardData = [
+  {
+    headding: "Whitechapel Rd.",
+    des: "Tulare County,  Los Angles, CA 23415",
+    price: "$1,456,654.00",
+    img: <LocationCard />,
+  },
+  {
+    headding: "Whitechapel Rd.",
+    des: "Tulare County,  Los Angles, CA 23415",
+    price: "$1,456,654.00",
+    img: <LocationCard2 />,
+  },
+  {
+    headding: "Whitechapel Rd.",
+    des: "Tulare County,  Los Angles, CA 23415",
+    price: "$1,456,654.00",
+    img: <LocationCard />,
+  },
+  {
+    headding: "Whitechapel Rd.",
+    des: "Tulare County,  Los Angles, CA 23415",
+    price: "$1,456,654.00",
+    img: <LocationCard />,
+  },
+];
 function Locations() {
   return (
     <>
@@ -50,10 +78,10 @@ function Locations() {
           <div className="flex gap-5 items-center mt-4 pb-4">
             <img src="/currency.png" alt="" />
             <div>
-              <p className="text-secondary font-semibold text-sm">Approx. Cost:</p>
-              <h3 className="text-black font-bold text-xl">
-                $60,607,456.00
-              </h3>
+              <p className="text-secondary font-semibold text-sm">
+                Approx. Cost:
+              </p>
+              <h3 className="text-black font-bold text-xl">$60,607,456.00</h3>
             </div>
           </div>
 
@@ -61,20 +89,38 @@ function Locations() {
 
           <div className="py-14">
             <p className="text-black font-medium">Description</p>
-            <p className="text-gray-600 leading-[22px] mt-3">Lorem ipsum dolar sit general sac mascho werhoLorem ipsum dolar sit general sac mascho werhoLorem ipsum dolar sit general sac mascho werhoLorem ipsum dolar sit general sac mascho werhoLorem ipsum dolar sit general sac mascho werhoLorem ipsum dolar sit general sac mascho werho</p>
-
+            <p className="text-gray-600 leading-[22px] mt-3">
+              Lorem ipsum dolar sit general sac mascho werhoLorem ipsum dolar
+              sit general sac mascho werhoLorem ipsum dolar sit general sac
+              mascho werhoLorem ipsum dolar sit general sac mascho werhoLorem
+              ipsum dolar sit general sac mascho werhoLorem ipsum dolar sit
+              general sac mascho werho
+            </p>
           </div>
 
-            <div className="border-1 border-secondary/40 mt-4 w-full"></div>
+          <div className="border-1 border-secondary/40 mt-4 w-full"></div>
 
-            <div className="py-12">
-             <p className="text-gray-700 font-medium">Locations</p>
+          <div className="py-12">
+            <p className="text-gray-700 font-medium">Locations</p>
+          </div>
+          <div className="gird grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-2 items-center">
+          {LocationCardData.map((items: any, i: any) => (
+            <div key={i}>
+              <img src={items.img} alt="" />
+              <div className="py-4 space-y-3">
+                <h3>{items.headding}</h3>
+                <p>{items.des}</p>
+                <p>{items.price}</p>
+              </div>
             </div>
+          ))}
+        </div>
         </div>
 
         
         {/* right side */}
         <div className="w-[526px]">
+          <Location />
         </div>
       </div>
     </>
