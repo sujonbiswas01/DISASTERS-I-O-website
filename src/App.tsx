@@ -5,7 +5,10 @@ function App() {
   return (
     
     <>
-    <RouteallPage/>
+    <main className='overflow-x-hidden'>
+        <RouteallPage/>
+    </main>
+  
     </>
   )
 }

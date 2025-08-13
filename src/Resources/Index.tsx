@@ -1,7 +1,7 @@
 // logo
 export const Logo = ['/logo.png']
 
-
+// navitem data start here
 export const navItem =[
     {
         id:1,
@@ -31,3 +31,9 @@ export const navItem =[
     }
 
 ];
+// navitem data end here
+
+// dashboard card start here
+
+
+// dashboard card end here

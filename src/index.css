@@ -5,3 +5,26 @@
   --font-onest: "Onest", sans-serif;
   --color-secondary:#71717A;
 }
+
+@plugin '../hero.ts';
+/* Note: You may need to change the path to fit your project structure */
+@source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
+.overflow{
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.line{
+  background-color: #cbcccf;
+  position: relative;
+  width: 527px;
+  height: 5px;
+  z-index: 40;
+}
+.line div{
+  background-color: #FB923C;
+  width: 200px;
+  height: 5px;
+}
