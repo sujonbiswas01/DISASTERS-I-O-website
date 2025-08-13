@@ -2,7 +2,7 @@ import Camera from "../../assets/svg/Camera";
 import ImgIcon from "../../assets/svg/Img";
 import PeparClip from "../../assets/svg/PerperClip";
 
-const DahbordChat = ({ chatopen, setchatopen }: any) => {
+const DahbordChat = ({ chatopen}: any) => {
   return (
     <div className="">
       {chatopen && (

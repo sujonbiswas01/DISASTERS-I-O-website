@@ -1,5 +1,4 @@
-import React from 'react'
-import MapImg from '../../assets/svg/MapImg'
+ import MapImg from '../../assets/svg/MapImg'
 
 const IncidentTitle = () => {
   return (
