@@ -1,5 +1,4 @@
-import LocationCard from "../../assets/svg/LocationCard1";
-import LocationCard2 from "../../assets/svg/LocationCard2";
+import LocationCard from "../../components/LocationCard/LocationCard";
 import Location from "../../assets/svg/LocationImg";
 import TreeIcon from "../../assets/svg/TreeIcon";
 import { Button } from "../../components/button/Button";
@@ -9,27 +8,57 @@ const LocationCardData = [
     headding: "Whitechapel Rd.",
     des: "Tulare County,  Los Angles, CA 23415",
     price: "$1,456,654.00",
-    img: <LocationCard />,
+    img: "/locationCard1.png",
   },
   {
     headding: "Whitechapel Rd.",
     des: "Tulare County,  Los Angles, CA 23415",
     price: "$1,456,654.00",
-    img: <LocationCard2 />,
+    img: "/LocationCard2.png",
   },
   {
     headding: "Whitechapel Rd.",
     des: "Tulare County,  Los Angles, CA 23415",
     price: "$1,456,654.00",
-    img: <LocationCard />,
+    img: "/locationCard1.png",
   },
   {
     headding: "Whitechapel Rd.",
     des: "Tulare County,  Los Angles, CA 23415",
     price: "$1,456,654.00",
-    img: <LocationCard />,
+    img: "/locationCard1.png",
   },
 ];
+
+const activityData = [
+  {
+    img: "/locationCard1.png",
+    heading:"Activity name",
+    des: "Location name . 16.12212, -122.1424",
+    price: "$1,456,654.00",
+  },
+  {
+    img: "/locationCard1.png",
+    heading:"Activity name",
+    des: "Location name . 16.12212, -122.1424",
+    price: "$1,456,654.00",
+  },
+];
+
+const documentData =[
+  {
+    img: "/locationCard1.png",
+    heading:"Document name",
+    des: "Location name . 16.12212, -122.1424",
+    price: "$1,456,654.00",
+  },
+  {
+    img: "/locationCard1.png",
+    heading:"Document name",
+    des: "Location name . 16.12212, -122.1424",
+    price: "$1,456,654.00",
+  },
+]
 function Locations() {
   return (
     <>
@@ -63,9 +92,9 @@ function Locations() {
           </div>
         </div>
       </CardContainer>
-      <div className="flex gap-[94px] py-16 px-20">
+      <div className="flex  flex-col md:flex-row  gap-[30px] md:gap-[94px] py-16 px-4 md:px-20">
         {/* left side */}
-        <div className="w-[680px]">
+        <div className="md:w-[680px] w-full mx-auto">
           <div className="flex gap-5 items-center">
             <img src="/location1.png" alt="" />
             <div>
@@ -103,24 +132,67 @@ function Locations() {
           <div className="py-12">
             <p className="text-gray-700 font-medium">Locations</p>
           </div>
-          <div className="gird grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-2 items-center">
-          {LocationCardData.map((items: any, i: any) => (
-            <div key={i}>
-              <img src={items.img} alt="" />
-              <div className="py-4 space-y-3">
-                <h3>{items.headding}</h3>
-                <p>{items.des}</p>
-                <p>{items.price}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3">
+            {LocationCardData.map((items: any, i: any) => (
+              <div key={i} className="flex flex-col justify-center ">
+                <img src={items.img} alt="" />
+                <div className="py-4 space-y-3">
+                  <h3 className="text-[#09090B] font-bold text-sm">
+                    {items.headding}
+                  </h3>
+                  <p className="text-secondary text-xs">{items.des}</p>
+                  <p className="text-sm text-[#09090B]">{items.price}</p>
+                </div>
               </div>
+            ))}
+          </div>
+
+          <div>
+            <div className="py-4 mt-14 flex justify-between px-4">
+              <h2 className="text-black text-base">Activities</h2>
+              <p className="text-black text-base">See all</p>
             </div>
-          ))}
-        </div>
+            <div className="space-y-5">
+              {activityData.map((item: any, i: any) => (
+                <LocationCard key={i} className="py-4 space-y-4">
+                  <div className="flex gap-4">
+                    <img src={item.img} className="w-[78px] h-[78px] rounded-[10px]" alt="" />
+                    <div>
+                      <h2 className="text-black font-bold">{item.heading}</h2>
+                      <p className="text-secondary font-medium">{item.des}</p>
+                      <h2 className="text-black font-bold">{item.price}</h2>
+                    </div>
+                  </div>
+                </LocationCard>
+              ))}
+            </div>
+          </div>
+
+          <div className="py-2">
+            <div className="py-4 mt-14 flex justify-between px-4">
+              <h2 className="text-black text-base">Activities</h2>
+              <p className="text-black text-base">See all</p>
+            </div>
+            <div className="space-y-5">
+              {documentData.map((item: any, i: any) => (
+                <LocationCard key={i} className="py-4 space-y-4">
+                  <div className="flex gap-4">
+                    <img src={item.img} className="w-[78px] h-[78px] rounded-[10px]" alt="" />
+                    <div>
+                      <h2 className="text-black font-bold">{item.heading}</h2>
+                      <p className="text-secondary font-medium">{item.des}</p>
+                      <h2 className="text-black font-bold">{item.price}</h2>
+                    </div>
+                  </div>
+                </LocationCard>
+              ))}
+            </div>
+          </div>
         </div>
 
-        
         {/* right side */}
-        <div className="w-[526px]">
-          <Location />
+        <div className="w-full relative md:w-[526px] flex flex-col justify-center md:justify-start items-center md:items-start ">
+          <Location className="px-20 md:px-0" />
         </div>
       </div>
     </>
