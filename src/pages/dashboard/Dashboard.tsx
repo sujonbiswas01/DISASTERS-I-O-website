@@ -2,8 +2,6 @@ import { useState } from "react";
 import { Button } from "../../components/button/Button";
 import { Card1 } from "../../components/card/Card";
 import { CardContainer } from "../../components/container/CardContainer";
-import Incidents from "../incidents/Incidents";
-import Locations from "../Locations/Locations";
 import { Card, Skeleton } from "@heroui/react";
 import DahbordChat from "./DashboardChat";
 export const dashboardData = [

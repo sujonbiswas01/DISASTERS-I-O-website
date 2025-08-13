@@ -1,4 +1,3 @@
-import * as React from "react";
 const TreeIcon = (props:any) => (
   <svg
     width={25}

@@ -74,7 +74,8 @@ function Locations() {
 
         
         {/* right side */}
-        <div className="w-[526px]"></div>
+        <div className="w-[526px]">
+        </div>
       </div>
     </>
   );

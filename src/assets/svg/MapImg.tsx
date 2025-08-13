@@ -1,4 +1,3 @@
-import * as React from "react";
 const MapImg = (props:any) => (
   <svg
     width={752}
