@@ -16,6 +16,7 @@ const ResponsiveMenu = ({ setisOpen, isOpen }: any) => {
             <div className="flex flex-col h-[40vh]  justify-center items-center space-y-2">
               {navItem.map((item: any, i: any) => (
                 <NavLink
+                  onClick={()=>setisOpen(!isOpen)}
                   to={`${item.item == "Dashboard" ? "/" : item.item}`}
                   className={`${
                     item.item == "Dashboard" ? "text-green-700 " : "text-white/80"
